@@ -1,15 +1,12 @@
+* Misc
 
-* visd0m configuration
-
-** Misc
-
-*** Lower minimum warning level
+** Lower minimum warning level
 
 #+begin_src emacs-lisp
   (setq warning-minimum-level :emergency)
 #+end_src
 
-*** Straight
+** Straight
 
 #+begin_src emacs-lisp
   (defvar bootstrap-version)
@@ -32,7 +29,7 @@
   (straight-use-package 'use-package)
 #+end_src
 
-*** tabs
+** tabs
 
 #+begin_src emacs-lisp
   (setq-default indent-tabs-mode nil)
@@ -41,7 +38,7 @@
   (setq electric-indent-mode nil)
 #+end_src
 
-*** exec path from shell
+** exec path from shell
 
 #+begin_src emacs-lisp
   (use-package exec-path-from-shell
@@ -50,7 +47,7 @@
             (exec-path-from-shell-initialize)))
 #+end_src
 
-*** os notifications
+** os notifications
 
 #+begin_src emacs-lisp
   (use-package alert
@@ -58,7 +55,7 @@
     :config (setq alert-default-style 'libnotify))
 #+end_src
 
-*** Custom file
+** Custom file
 
 #+begin_src emacs-lisp
   (setq-default custom-file "~/.emacs.d/custom.el")
@@ -66,24 +63,24 @@
     (load custom-file))
 #+end_src
 
-*** Camel Case movement
+** Camel Case movement
 
 #+begin_src emacs-lisp
   (global-subword-mode 1)
 #+end_src
 
-*** Spaces instead of TABS
+** Spaces instead of TABS
 #+begin_src emacs-lisp
   (setq-default indent-tabs-mode nil)
 #+end_src
 
-*** Matching paren
+** Matching paren
 
 #+begin_src emacs-lisp
   (setq blink-matching-paren nil)
 #+end_src
 
-*** Backup files
+** Backup files
 
 #+begin_src emacs-lisp
   (setq create-lockfiles nil)
@@ -93,14 +90,14 @@
     `((".*" ,temporary-file-directory t)))
 #+end_src
 
-*** CamelCase to snake_case to SCREAMING_SNAKE_CASE
+** CamelCase to snake_case to SCREAMING_SNAKE_CASE
 
 #+begin_src emacs-lisp
   (use-package string-inflection
     :straight t)
 #+end_src
 
-*** Keep folders clean
+** Keep folders clean
 
 #+begin_src emacs-lisp
     (use-package no-littering
@@ -110,9 +107,9 @@
       `((".*" ,(no-littering-expand-var-file-name "auto-save/") t)))
 #+end_src
 
-** UI
+* UI
 
-*** Basic UI configuration
+** Basic UI configuration
 
 #+begin_src emacs-lisp
   (setq inhibit-startup-message t)
@@ -195,9 +192,9 @@
     :straight t)
 #+end_src
 
-** Completion
+* Completion
 
-*** wich key
+** wich key
 
 #+begin_src emacs-lisp
   (use-package which-key
@@ -209,21 +206,21 @@
     (setq which-key-idle-delay 1))
 #+end_src
 
-*** vertico
+** vertico
 #+begin_src emacs-lisp
   (use-package vertico
     :straight t
     :config (vertico-mode 1))
 #+end_src
 
-*** marginalia
+** marginalia
 #+begin_src emacs-lisp
   (use-package marginalia
     :straight t
     :config (marginalia-mode 1))
 #+end_src
 
-*** embark
+** embark
 #+begin_src emacs-lisp
   (use-package embark
     :straight t
@@ -262,7 +259,7 @@
     (embark-collect-mode . consult-preview-at-point-mode))
 #+end_src
 
-*** consult
+** consult
 #+begin_src emacs-lisp
   (use-package consult
     :straight t
@@ -271,7 +268,7 @@
            ([remap list-buffers] . consult-buffer)))
 #+end_src
 
-*** orderless
+** orderless
 #+begin_src emacs-lisp
   (use-package orderless
     :straight t
@@ -280,7 +277,7 @@
     (completion-category-overrides '((file (styles basic partial-completion)))))
 #+end_src
 
-*** hydra
+** hydra
 
 #+begin_src emacs-lisp
   (use-package hydra
@@ -293,9 +290,9 @@
     ("f" nil "finished" :exit t))
 #+end_src
 
-** Coding
+* Coding
 
-*** asdf
+** asdf
 
 #+begin_src emacs-lisp
   (use-package asdf
@@ -303,7 +300,7 @@
     :init (asdf-enable))
 #+end_src
 
-*** version control
+** version control
 
 #+begin_src emacs-lisp
   (use-package magit
@@ -329,7 +326,7 @@
     (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh))
 #+end_src
 
-*** dired
+** dired
 
 #+begin_src emacs-lisp
   (use-package dired
@@ -341,12 +338,12 @@
     :straight t)
 #+end_src
 
-*** neo tree
+** neo tree
 #+begin_src emacs-lisp
   (use-package neotree
     :straight t)
 #+end_src
-*** lsp
+** lsp
 #+begin_src emacs-lisp
   (defun efs/lsp-mode-setup ()
     (setq lsp-headerline-breadcrumb-segments '(path-up-to-project file symbols))
@@ -412,7 +409,7 @@
     (add-hook 'text-mode-hook 'yas-minor-mode))
 #+end_src
 
-*** company
+** company
 
 #+begin_src emacs-lisp
   (use-package company
@@ -430,7 +427,7 @@
     (company-idle-delay 0.5))
 #+end_src
 
-*** rainbow
+** rainbow
 
 #+begin_src emacs-lisp
   (use-package rainbow-delimiters
@@ -438,14 +435,14 @@
     :hook (prog-mode . rainbow-delimiters-mode))
 #+end_src
 
-*** json
+** json
 
 #+begin_src emacs-lisp
   (use-package json-mode
     :straight t)
 #+end_src
 
-*** rust
+** rust
 
 #+begin_src emacs-lisp
   (use-package toml-mode
@@ -466,7 +463,7 @@
     (setq rustic-format-on-save t))
 #+end_src
 
-*** scheme
+** scheme
 #+begin_src emacs-lisp
   (use-package paredit
     :straight t
@@ -478,7 +475,7 @@
     :straight t)
 #+end_src
 
-*** python
+** python
 
 #+begin_src emacs-lisp
   (use-package python-mode
@@ -498,7 +495,7 @@
     :hook (robot-mode . lsp-deferred))
 #+end_src
 
-*** clojure
+** clojure
     
 #+begin_src emacs-lisp
   
@@ -507,7 +504,7 @@
     :hook (clojure-mode . lsp-deferred))
 #+end_src
 
-*** elixir
+** elixir
 
 #+begin_src emacs-lisp
   (use-package elixir-mode
@@ -515,14 +512,14 @@
     :hook (elixir-mode . lsp-deferred))
 #+end_src
 
-*** go
+** go
     
 #+begin_src emacs-lisp
   (use-package go-mode
     :straight t)
 #+end_src
 
-*** java
+** java
 
 #+begin_src emacs-lisp
   (use-package yaml
@@ -533,7 +530,7 @@
     :config (add-hook 'java-mode-hook 'lsp))
 #+end_src
 
-*** github copilot
+** github copilot
 
 #+begin_src emacs-lisp
   (use-package copilot
@@ -543,21 +540,21 @@
     :straight t)
 #+end_src
 
-*** ellellemm
+** ellellemm
 
 #+begin_src emacs-lisp
   (use-package ellellemm
     :straight (:host github :repo "deepankarsharma/ellellemm"))
 #+end_src
 
-*** graphql
+** graphql
 
 #+begin_src emacs-lisp
   (use-package graphql-mode
     :straight t)
 #+end_src
 
-*** sql
+** sql
 
 #+begin_src emacs-lisp
   (use-package sql
@@ -568,7 +565,7 @@
     (setq sql-postgres-login-params (append sql-postgres-login-params '(port :default ,5432))))
 #+end_src    
 
-*** markdown
+** markdown
 
 #+begin_src emacs-lisp
   (use-package markdown-mode
@@ -580,7 +577,7 @@
     :init (setq markdown-command "multimarkdown"))
 #+end_src
 
-*** elm
+** elm
 
 #+begin_src emacs-lisp
   (use-package elm-mode
@@ -590,7 +587,7 @@
     (elm-mode . elm-format-on-save-mode))
 #+end_src
 
-*** php
+** php
 
 #+begin_src emacs-lisp
   (use-package php-mode
@@ -598,14 +595,14 @@
     :hook (php-mode . lsp-deferred))
 #+end_src
 
-*** yaml
+** yaml
 
 #+begin_src emacs-lisp
   (use-package yaml-mode
     :straight t)
 #+end_src
 
-*** commenting
+** commenting
 
 #+begin_src emacs-lisp
   (use-package evil-nerd-commenter
@@ -613,7 +610,7 @@
     :bind ("M-/" . evilnc-comment-or-uncomment-lines))
 #+end_src
 
-*** org
+** org
 
 #+begin_src emacs-lisp
   (use-package org
@@ -665,14 +662,14 @@
     :after ox)
 #+end_src
 
-*** request
+** request
 
 #+begin_src emacs-lisp
   (use-package request
     :straight t)
 #+end_src
 
-*** terminal
+** terminal
 
 #+begin_src emacs-lisp
   (use-package multi-vterm
@@ -685,9 +682,9 @@
     ("C-c C-t" . vterm-copy-mode))
 #+end_src
 
-** Editing & Movement
+* Editing & Movement
 
-*** multiple cursors
+** multiple cursors
 
 #+begin_src emacs-lisp
   (use-package multiple-cursors
@@ -699,7 +696,7 @@
     ("C-c C-e" . mc/edit-lines))
 #+end_src
 
-*** ace jump
+** ace jump
 
 #+begin_src emacs-lisp
   (use-package ace-jump-mode
@@ -707,7 +704,7 @@
     :bind ("C-c c SPC" . ace-jump-mode))
 #+end_src
 
-*** back-button
+** back-button
 
 #+begin_src emacs-lisp
   (use-package back-button
@@ -719,7 +716,7 @@
     ("M-]" . back-button-global-forward))
 #+end_src
 
-*** window
+** window
 
 #+begin_src emacs-lisp
   (use-package ace-window
@@ -727,7 +724,7 @@
     :bind ([remap other-window] . ace-window))
 #+end_src
 
-*** undo
+** undo
 
 #+begin_src emacs-lisp
   (use-package undo-tree
@@ -738,28 +735,28 @@
     (setq undo-tree-auto-save-history nil))
 #+end_src
 
-*** ag
+** ag
 
 #+begin_src emacs-lisp
   (use-package ag
     :straight t)
 #+end_src
 
-*** rg
+** rg
 
 #+begin_src emacs-lisp
   (use-package rg
     :straight t)
 #+end_src
 
-*** wgrep
+** wgrep
 
 #+begin_src emacs-lisp
   (use-package wgrep
     :straight t)
 #+end_src
 
-** Tramp
+* Tramp
    
 #+begin_src emacs-lisp
   (use-package docker-tramp
@@ -769,16 +766,16 @@
     :straight t)
 #+end_src
 
-** Kubernetes
+* Kubernetes
    
 #+begin_src emacs-lisp
   (use-package kubectx-mode
     :straight t)
 #+end_src
 
-** Custom functions
+* Custom functions
 
-*** select line
+** select line
 
 #+begin_src emacs-lisp
   (defun visd0m/select-line ()
@@ -789,7 +786,7 @@
     (move-end-of-line nil))
 #+end_src
 
-*** go to elixir hexdoc
+** go to elixir hexdoc
 
 #+begin_src emacs-lisp
   (defun visd0m/elixir-doc ()
@@ -799,7 +796,7 @@
       (browse-url-default-browser url)))
 #+end_src
 
-*** go to rust doc
+** go to rust doc
 
 #+begin_src emacs-lisp
   (defun visd0m/elixir-doc-hex (hex)
@@ -815,7 +812,7 @@
       (browse-url-default-browser url)))
 #+end_src
 
-*** kill buffer file name
+** kill buffer file name
 
 #+begin_src emacs-lisp
   (defun visd0m/kill-buffer-file-truename ()
@@ -825,7 +822,7 @@
         (kill-new buffer-file-truename)))
 #+end_src
 
-*** kill buffer file project relative name
+** kill buffer file project relative name
 
 #+begin_src emacs-lisp
   (defun visd0m/buffer-file-project-relative-name ()
@@ -840,7 +837,7 @@
         nil)))
 #+end_src
 
-*** go to file at line
+** go to file at line
 
 #+begin_src emacs-lisp
   (defun visd0m/go-to-file-at-line (file-and-line)
@@ -855,7 +852,7 @@
             (goto-line (string-to-number line))))))
 #+end_src
 
-*** open line in github
+** open line in github
 
 #+begin_src emacs-lisp
   (defun visd0m/open-in-github ()
@@ -909,7 +906,7 @@
          (list (cons 'service 'unhandled))))))
 #+end_src
 
-*** delete work backword without kill
+** delete work backword without kill
 
 #+begin_src emacs-lisp
   (defun vid0m/backward-delete-word-no-kill (arg)
@@ -931,7 +928,7 @@
        (point))))
 #+end_src
 
-*** delete line no kill
+** delete line no kill
 
 #+begin_src emacs-lisp
   (defun visd0m/delete-line-no-kill ()
@@ -944,7 +941,7 @@
        (progn (forward-visible-line 1) (point)))))
 #+end_src
 
-*** kill all "registered" lsp server
+** kill all "registered" lsp server
 
 #+begin_src emacs-lisp
   (defun visd0m/lsp-kill-all ()
@@ -965,7 +962,7 @@
        (string-match "^iph$" process-name))))
 #+end_src
 
-** export sql query result to csv file
+* export sql query result to csv file
 
 #+begin_src emacs-lisp
   (defun visd0m/psql-export-query-result-to-csv (query-to-execute csv-file-name)
@@ -974,14 +971,14 @@
     (sql-send-string (format "\\copy (%s) to '%s' csv header" query-to-execute csv-file-name)))
 #+end_src
 
-** Feed
+* Feed
 
 #+begin_src emacs-lisp
   (use-package elfeed
     :straight t)
 #+end_src
 
-** Telegram
+* Telegram
 
 #+begin_src emacs-lisp
   (use-package telega
@@ -989,7 +986,7 @@
     :init (setq telega-use-docker t))
 #+end_src
 
-** Mastodon
+* Mastodon
 #+begin_src emacs-lisp
   (use-package mastodon
     :straight t
@@ -998,7 +995,7 @@
     (mastodon-active-user "visd0m"))
 #+end_src
 
-** Global key bindings
+* Global key bindings
 
 #+begin_src emacs-lisp
   (global-set-key (kbd "C-c c s") 'visd0m/select-line)
@@ -1006,8 +1003,7 @@
   (global-set-key (kbd "C-<S-backspace>") 'visd0m/delete-line-no-kill)
 #+end_src
 
-
-** Tips & Tricks
+* Tips & Tricks
    To have multiple sqli buffer do as follow: C-u M-x sql-<product>
 
    To insert a new line in mini buffer: C-q C-j
