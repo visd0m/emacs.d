@@ -1,0 +1,12 @@
+* This repo contains all the configuration files to reproduce my personal emacs
+
+** What can you find here
+
+*** config.org
+This is the main source file I edit to update my emacs configuration.
+
+*** init.el
+This file tell emacs to use org-babel to read emacs-lips code blocks from ~config.org~.
+
+*** default.el
+The lockfile keeping track of the current version of my packages that are handled trhough straight.el
