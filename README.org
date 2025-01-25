@@ -1,4 +1,6 @@
-* This repo contains all the configuration files to reproduce my personal emacs
+* emacs.d
+
+This repo contains all the configuration files to reproduce my personal emacs
 
 ** What can you find here
 
