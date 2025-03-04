@@ -542,8 +542,8 @@
   (use-package copilot
     :straight t)
 
-  (use-package copilot-chat
-    :straight t)
+  ;; (use-package copilot-chat
+  ;;   :straight t)
 #+end_src
 
 ** ellellemm
