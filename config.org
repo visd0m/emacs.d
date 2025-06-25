@@ -530,6 +530,13 @@
     :config (add-hook 'java-mode-hook 'lsp))
 #+end_src
 
+** js
+
+#+begin_src emacs-lisp
+  (use-package typescript-mode
+    :straight t)
+#+end_src
+
 ** kotlin
 #+begin_src emacs-lisp
   (use-package kotlin-mode
@@ -556,8 +563,10 @@
 ** graphql
 
 #+begin_src emacs-lisp
-  (use-package graphql-mode
-    :straight t)
+    (use-package graphql-mode
+      :straight t
+      :custom (lsp-graphql-target-file-extensions
+       '("graphql" "graphqls" "gql")))
 #+end_src
 
 ** sql

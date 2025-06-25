@@ -119,6 +119,7 @@
  ("tp.el" . "cce2dfe0ec2b5c070cb13a7bdf95695eeb6e3caf")
  ("transient" . "7d08039c44f04f28e80718e3c22acf522b2d4baf")
  ("treemacs" . "96a808f06760ec8c595d27eb5c991ea905c948f6")
+ ("typescript.el" . "481df3ad2cdf569d8e6697679669ff6206fbd2f9")
  ("undo-tree" . "d8f72bbe7d3c3a2808986febd3bb1a46d4da7f51")
  ("use-package" . "d79bac45749e903a7099402111cf5ecc12f9d48f")
  ("vertico" . "000a415630c4be0fb6be5c5a8fc31b6caaa7a76e")
