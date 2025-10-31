@@ -464,6 +464,7 @@
 #+end_src
 
 ** scheme
+
 #+begin_src emacs-lisp
   (use-package paredit
     :straight t
@@ -472,6 +473,13 @@
     (emacs-lisp-mode . paredit-mode))
 
   (use-package geiser-guile
+    :straight t)
+#+end_src
+
+** nix
+
+#+begin_src emacs-lisp
+  (use-package nix-mode
     :straight t)
 #+end_src
 
