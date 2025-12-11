@@ -912,7 +912,7 @@
     "Get git remote url."
     (with-temp-buffer
       ;; git config --get remote.origin.url
-      (vc-git--call (current-buffer) "config" "--get" "remote.origin.url")
+      (vc-git--call nil (current-buffer) "config" "--get" "remote.origin.url")
       (string-trim-right (buffer-string))))
 
   (defun visd0m/parse-git-remote (remote-url)
