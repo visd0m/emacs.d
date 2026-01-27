@@ -1026,11 +1026,26 @@
   (global-set-key (kbd "C-<S-backspace>") 'visd0m/delete-line-no-kill)
 #+end_src
 
-* Tips & Tricks
-   To have multiple sqli buffer do as follow: C-u M-x sql-<product>
+* Handy things
 
-   To insert a new line in mini buffer: C-q C-j
+To have multiple sqli buffer do as follow: C-u M-x sql-postgres
 
-   To start recording a macro: F3
-   To stop recording a macro: F4
-   To use last recorded macro: F4
+To insert a new line in mini buffer: C-q C-j
+
+** Macro recording
+
+To start recording a macro: F3
+To stop recording a macro: F4
+To use last recorded macro: F4
+
+** Test microphone input (ubuntu)
+
+Creates a loopback module that connects your input directly to your output, and the unload the module
+
+#+begin_src sh
+# to enable the loopback module
+pactl load-module module-loopback latency_msec=1
+
+# to unload the loopback module
+pactl unload-module module-loopback
+#+end_src
