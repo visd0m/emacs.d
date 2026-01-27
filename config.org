@@ -546,13 +546,14 @@
 #+end_src
 
 ** kotlin
+
 #+begin_src emacs-lisp
   (use-package kotlin-mode
     :straight t
     :hook (kotlin-mode . lsp-deferred))
 #+end_src
-** github copilot
 
+** github copilot
 #+begin_src emacs-lisp
   (use-package copilot
     :straight t)
