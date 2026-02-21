@@ -751,12 +751,12 @@
 ** undo
 
 #+begin_src emacs-lisp
-  (use-package undo-tree
-    :straight t
-    :init (global-undo-tree-mode)
-    :bind ([remap upcase-region] . undo-tree-visualize)
-    :config
-    (setq undo-tree-auto-save-history nil))
+  ;; (use-package undo-tree
+  ;;   :straight t
+  ;;   :init (global-undo-tree-mode)
+  ;;   :bind ([remap upcase-region] . undo-tree-visualize)
+  ;;   :config
+  ;;   (setq undo-tree-auto-save-history nil))
 #+end_src
 
 ** ag
