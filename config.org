@@ -751,12 +751,12 @@
 ** undo
 
 #+begin_src emacs-lisp
-  ;; (use-package undo-tree
-  ;;   :straight t
-  ;;   :init (global-undo-tree-mode)
-  ;;   :bind ([remap upcase-region] . undo-tree-visualize)
-  ;;   :config
-  ;;   (setq undo-tree-auto-save-history nil))
+  (use-package undo-tree
+    :straight t
+    :init (global-undo-tree-mode)
+    :bind ([remap upcase-region] . undo-tree-visualize)
+    :config
+    (setq undo-tree-auto-save-history nil))
 #+end_src
 
 ** ag
@@ -985,6 +985,14 @@
        (string-match "^elm-ls$" process-name)
        (string-match "^iph$" process-name))))
 #+end_src
+
+* AI
+
+#+begin_src emacs-lisp
+  (use-package ellama
+    :straight t)
+#+end_src
+
 
 * export sql query result to csv file
 
