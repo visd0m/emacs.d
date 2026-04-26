@@ -1058,3 +1058,10 @@ pactl load-module module-loopback latency_msec=1
 # to unload the loopback module
 pactl unload-module module-loopback
 #+end_src
+
+** Env vars to setup claude code to interact with local llm installed and served via ollama
+#+begin_src sh
+export ANTHROPIC_AUTH_TOKEN="ollama"
+export ANTHROPIC_BASE_URL="http://localhost:11434"
+export ANTHROPIC_API_KEY="local-dev"
+#+end_src
